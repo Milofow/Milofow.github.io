@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <link rel="manifest" href="manifest.json">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
     <body>
-        <h1>Welkom bij mijn portfolio</h1>
+        <h1>Welkom bij mijn portfolioooo</h1>
+        <script type="text/javascript">
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('../service-worker.js').then(function(registration) {
+                        //Registration was succesfully
+                        console.log("Service worker registration succesful with scope: ", registration.scope);
+                    }, function(err) {
+                        //Registration failed
+                        console.log("Service worker failed to register", err);
+                    });
+                });
+            }
+        </script>
     </body>
+
+
 </html>
